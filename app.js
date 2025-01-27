@@ -19,14 +19,12 @@ function adicionarAmigo() {
 
 // Atualizar a lista
 function atualizarListaAmigos() {
-    let lista = document.getElementById("listaAmigos");
-    lista.innerHTML = ""; 
+    let lista = document.getElementById('listaAmigos');
+    lista.innerHTML = ''; // Limpa a lista anterior
 
-    amigos.forEach((amigo, list) => {
-        let item = document.createElement("li");
-        item.textContent = `${list + 1}. ${amigo}`;
-        lista.appendChild(item);
-    });
+    for (let i = 0; i < amigos.length; i++) {
+        lista.innerHTML += `<li>${i + 1}. ${amigos[i]}</li>`;
+    }
 }
 
 // Sortear amigo
